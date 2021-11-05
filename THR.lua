@@ -16,7 +16,7 @@ lib:Init()
 
 while true do
     if killAll or silentAim then
-        local zombie = utils:ClosestInstance('ToMouse', infected, 'Head', true)
+        local zombie = utils:ClosestInstance('ToCharacter', infected, 'Head', true)
         if zombie and (killAll or silentAim and utils.UIS:IsMouseButtonPressed(Enum.UserInputType.MouseButton1)) then
             utils.RS.RE:FireServer(curStr, {["AIs"] = {[1] = {["AI"] = zombie.Parent,["Velocity"] = Vector3.new(),
                 ["Special"] = "Headshot",
