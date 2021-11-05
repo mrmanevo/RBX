@@ -12,6 +12,8 @@ local f = window:AddFolder('Main')
     f:AddBind({text = "Kill All Keybind", key = "P", callback = function() killAll = not killAll; ka:SetState(killAll) end})
     local sa = f:AddToggle({text = 'Silent Aim', callback = function(v) silentAim = v end})
 	f:AddBind({text = "Silent Aim Keybind", key = "C", callback = function() silentAim = not silentAim; sa:SetState(silentAim) end})
+	f:AddToggle({text = 'Infinite Health', callback = function(v) god = v end})
+	f:AddToggle({text = 'Infinite Armor', callback = function(v) armor = v end})
 lib:Init()
 
 while true do
@@ -24,5 +26,17 @@ while true do
             }}})
         end
     end
+	if god then
+		local human = utils.Player.Character["Humanoid"]
+		if human then
+			human.Value = 100
+		end
+	end
+	if armor then
+		local armor = utils.Player.Character["Armor"]
+		if armor then
+			armor.Value = 100
+		end
+	end
     wait()
 end
