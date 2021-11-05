@@ -27,15 +27,19 @@ while true do
         end
     end
 	if god then
-		local human = utils.Player.Character["Humanoid"]
+		local human = player.Character:findFirstChild("Humanoid")
 		if human then
-			human.Value = 100
+			if human.Health<100 then
+				human.Health = 100
+			end
 		end
 	end
 	if armor then
-		local armor = utils.Player.Character["Armor"]
+		local armor = player.Character:findFirstChild("Armor")
 		if armor then
-			armor.Value = 100
+			if armor.Value<100 then
+				armor.Value = 100
+			end
 		end
 	end
     wait()
