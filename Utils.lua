@@ -32,7 +32,8 @@ function Utility:ClosestInstance(Type, Path, PartName, OnScreen, WithinDistance)
                 local Mouse = self.Player:GetMouse()
                 NewDistance = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(Viewport.X, Viewport.Y)).magnitude 
             end
-            if NewDistance < Distance and (OnScreen and Visible) or not OnScreen then 
+            --or not OnScreen 
+            if NewDistance < Distance and (OnScreen and Visible) then 
                 Distance = NewDistance; Closest = v
             end
         end
