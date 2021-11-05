@@ -1,5 +1,5 @@
-local utils = loadstring(game:HttpGet('https://raw.githubusercontent.com/canerom/Roblox/main/Libraries/Utils.lua'))()
-local lib = loadstring(game:HttpGet('https://raw.githubusercontent.com/canerom/Roblox/main/Libraries/Ui/Uwuware.lua'))()
+local utils = loadstring(game:HttpGet('https://raw.githubusercontent.com/mrmanevo/RBX/main/Utils.lua'))()
+local lib = loadstring(game:HttpGet('https://raw.githubusercontent.com/mrmanevo/RBX/main/wua.lua'))()
 
 local player = utils.Player
 local client = getsenv(player.PlayerScripts.Client)
