@@ -27,20 +27,10 @@ while true do
         end
     end
 	if god then
-		local human = utils:ReturnHumanoid()
-		if human then
-			if human.Health<100 then
-				human.Health = 100
-			end
-		end
+		utils:ReturnHumanoid()
 	end
 	if armor then
-		local armor = utils:ReturnArmor()
-		if armor then
-			if armor.Value<100 then
-				armor.Value = 100
-			end
-		end
+		utils:ReturnArmor()
 	end
     wait()
 end
