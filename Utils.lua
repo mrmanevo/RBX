@@ -12,6 +12,16 @@ function Utility:ReturnRoot()
     return Char:WaitForChild('HumanoidRootPart')
 end
 
+function Utility:ReturnHumanoid()
+    local Char = self.Player.Character or self.Player.CharacterAdded:wait()
+    return Char:WaitForChild('Humanoid')
+end
+
+function Utility:ReturnArmor()
+    local Char = self.Player.Character or self.Player.CharacterAdded:wait()
+    return Char:WaitForChild('Armor')
+end
+
 function Utility:Tween(Target, Speed)
     local Tween = self.TS:Create(self:ReturnRoot(), 
         TweenInfo.new(self.Player:DistanceFromCharacter(Target.Position)/(Speed*100), Enum.EasingStyle.Linear),  
