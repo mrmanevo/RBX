@@ -27,7 +27,7 @@ while true do
         end
     end
 	if god then
-		local human = player.Character:findFirstChild("Humanoid")
+		local human = utils:ReturnHumanoid()
 		if human then
 			if human.Health<100 then
 				human.Health = 100
@@ -35,7 +35,7 @@ while true do
 		end
 	end
 	if armor then
-		local armor = player.Character:findFirstChild("Armor")
+		local armor = utils:ReturnArmor()
 		if armor then
 			if armor.Value<100 then
 				armor.Value = 100
