@@ -14,12 +14,18 @@ end
 
 function Utility:ReturnHumanoid()
     local Char = self.Player.Character or self.Player.CharacterAdded:wait()
-    return Char:WaitForChild('Humanoid')
+    local humanoid = Char:WaitForChild('Humanoid')
+	if humanoid then
+		humanoid.Health = 100
+	end
 end
 
 function Utility:ReturnArmor()
     local Char = self.Player.Character or self.Player.CharacterAdded:wait()
-    return Char:WaitForChild('Armor')
+    local armor = Char:WaitForChild('Armor')
+	if armor then
+		armor.Value = 100
+	end
 end
 
 function Utility:Tween(Target, Speed)
@@ -42,8 +48,7 @@ function Utility:ClosestInstance(Type, Path, PartName, OnScreen, WithinDistance)
                 local Mouse = self.Player:GetMouse()
                 NewDistance = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(Viewport.X, Viewport.Y)).magnitude 
             end
-            --or not OnScreen 
-            if NewDistance < Distance and (OnScreen and Visible) then 
+            if NewDistance < Distance and (OnScreen and Visible) or not OnScreen then 
                 Distance = NewDistance; Closest = v
             end
         end
